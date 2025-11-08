@@ -114,7 +114,7 @@ WITH calc AS (
            / LAG(gasoline_price,12) OVER (ORDER BY date)
     END AS yoy_pct
   FROM fuel_prices
-  WHERE city = 'Houston'            -- add if your table has multiple cities
+  WHERE city = 'Houston'            
 )
 SELECT date, 'MoM %' AS metric, mom_pct AS pct
 FROM calc
